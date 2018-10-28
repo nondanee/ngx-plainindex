@@ -42,15 +42,17 @@ function sizeFormat(size){
 
 function pathJoin(){
 	let paths = Array.from(arguments)
+	paths = paths.map(function(fragment){return fragment.split('/')})
+	paths = paths.reduce(function(previous, current){return previous.concat(current)})
 	paths = paths.map(function(fragment){return fragment.trim()})
-	paths = paths.filter(function(fragment){return fragment != '.'})
+	paths = paths.filter(function(fragment){return fragment != '.' && fragment != ''})
 	while(true){
 		let index = paths.indexOf('..')
 		if(index == -1) break
 		else if(index > 0) paths.splice(index - 1, 2)
 		else throw new Error('permission denied')
 	}
-	return paths.join('/').replace(/\/\//g,'/')
+	return '/' + paths.join('/')
 }
 
 function createElement(tagName, className, innerHTML){
