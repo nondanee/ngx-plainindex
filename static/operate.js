@@ -30,14 +30,16 @@ document.addEventListener('dragover', function(event){
 
 document.addEventListener('drop', function(event){  
 	event.preventDefault()
-	upload(event.dataTransfer.files[0])
+	upload(event.dataTransfer.files)
 }, false)
 
 
-function upload(file){
+function upload(files){
 	let xhr = new XMLHttpRequest()
 	let formData = new FormData()
-	formData.append("file", file)
+	Array.from(files).forEach(function(file, index){
+		formData.append(index, file)
+	})
 	
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4){
@@ -50,7 +52,7 @@ function upload(file){
 			setTimeout(function(){
 				load()
 				disappear()
-			}, 2000)
+			}, 1000)
 		}
 	}
 	xhr.upload.onprogress = function(event){
@@ -59,6 +61,6 @@ function upload(file){
 		}
 	}
 	xhr.open('POST', uploadHost)
-	xhr.setRequestHeader('directory', path)
+	xhr.setRequestHeader('directory', encodeURIComponent(path))
 	xhr.send(formData)
 }

@@ -33,7 +33,7 @@ const receiver = (request) => {
 	return new Promise((resolve, reject) => {
 		let user = authorization(request)
 		if(!user) return reject(401)
-		let directory = request.headers['directory']
+		let directory = decodeURIComponent(request.headers['directory'] || '')
 		if(!directory) return reject(400)
 		directory = directory.slice(1) + '/'
 		if(!directory.startsWith(user + '/')) return reject(403)
