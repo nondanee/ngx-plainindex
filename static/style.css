@@ -1,0 +1,146 @@
+html,body{
+	margin: 0;
+	height: 100%;
+	font-family: 'Open Sans';
+}
+
+a{
+	outline:none;
+}
+a:link,a:hover,a:visited,a:active{
+	/*color: initial;*/
+	text-decoration: initial;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+}
+.header, .indicator{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.path{
+	color: #636363;
+	font-size: 26px;
+	text-align: center;
+	margin: 32px 0 36px;
+	flex: none;
+}
+.content{
+	width: 100%;
+	flex-shrink: 1;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 24px;
+}
+
+.header,.item{
+	width: 1024px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	padding: 0 12px;
+}
+
+.header{
+	font-size: 16px;
+	font-weight: bold;
+	height: 28px;
+	flex: none;
+}
+.header span{
+	cursor: pointer;
+}
+.header span:hover{
+	text-decoration: underline;
+}
+
+.header span.asc::after{
+	content: "↑";
+}
+.header span.desc::after{
+	content: "↓";
+}
+
+span{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+}
+.name{
+	padding-right: 12px;
+}
+
+.list{
+	overflow: auto;
+}
+
+.item{
+	font-size: 18px;
+	height: 54px;
+	color: #949494;
+	border-bottom: 1px solid #edf1f5;
+}
+.item span:first-child{
+	color: #656565;
+}
+.item:hover{
+	background: #f6f6f6;
+}
+
+.item.directory .name{
+	color: #52b5e6;
+}
+.item:last-child{
+	border-bottom: none;
+}
+
+.name{
+	flex: 4;
+}
+.size{
+	flex: 1;
+}
+.date{
+	text-align: right;
+	flex: 1;
+}
+
+
+.indicator{
+    position: absolute;
+    width: 100%;
+    left: 0; bottom: 0;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.indicator .text{
+	position: relative;
+	height: 56px;
+	padding: 0 28px;
+	border-radius: 28px;
+	line-height: 56px;
+	font-size: 20px;
+	color: #fff;
+	background-color: rgba(0,0,0,0.48);
+	overflow: hidden;
+}
+
+.indicator .text .progress{
+	z-index: -1;
+	position: absolute;
+	left: 0; top: 0;
+	height: 100%;
+	width: 0;
+	background-color: rgba(0,0,0,0.12);
+}
