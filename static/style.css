@@ -16,7 +16,7 @@ body{
 	display: flex;
 	flex-direction: column;
 }
-.header, .indicator{
+.header, .indicator, .error{
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -144,4 +144,23 @@ span{
 	height: 100%;
 	width: 0;
 	background-color: rgba(0,0,0,0.12);
+}
+
+.error{
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+.error::before{
+	content: '404';
+	color: #656565;
+	font-size: 180px;
+	line-height: 210px;
+}
+.error::after{
+	content: 'Not Found';
+	color: #949494;
+	font-size: 36px;
 }

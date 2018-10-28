@@ -140,6 +140,10 @@ function load(){
 		items = data
 	})
 	.then(show)
+	.catch(function(){
+		document.body.innerHTML = ''
+		document.body.appendChild(createElement('div', 'error'))
+	})
 }
 
 
