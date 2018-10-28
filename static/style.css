@@ -28,6 +28,7 @@ body{
 	font-size: 26px;
 	text-align: center;
 	margin: 32px 0 36px;
+	line-height: 36px;
 	flex: none;
 }
 .content{
@@ -61,10 +62,10 @@ body{
 }
 
 .header span.asc::after{
-	content: "↑";
+	content: "\2191";
 }
 .header span.desc::after{
-	content: "↓";
+	content: "\2193";
 }
 
 span{

@@ -129,7 +129,7 @@ function show(){
 }
 
 function load(){
-	path = (window.location.hash || '#/').slice(1)
+	path = decodeURIComponent((window.location.hash || '#/').slice(1))
 	return fetch(fileHost + path + '/', {credentials: 'include'})
 	.then(function(response){return response.json()})
 	.then(function(data){
