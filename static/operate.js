@@ -3,8 +3,8 @@ const indicator = createElement('div','indicator')
 
 function notify(text, progress){
 	indicator.innerHTML = ''
-	let textElement = indicator.appendChild(createElement('div','text',text))
-	let progressElement = textElement.appendChild(createElement('div','progress'))
+	var textElement = indicator.appendChild(createElement('div','text',text))
+	var progressElement = textElement.appendChild(createElement('div','progress'))
 	if(progress){
 		progress = (progress * 100).toFixed() + '%'
 		progressElement.style.width = progress
@@ -35,8 +35,8 @@ document.addEventListener('drop', function(event){
 
 
 function upload(files){
-	let xhr = new XMLHttpRequest()
-	let formData = new FormData()
+	var xhr = new XMLHttpRequest()
+	var formData = new FormData()
 	Array.from(files).forEach(function(file, index){
 		formData.append(index, file)
 	})
