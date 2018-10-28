@@ -1,8 +1,11 @@
 # Nginx Plain Index (not module)
 
+Vanilla JS + plain CSS + Node.js (0 Dependences)
+
 不想自编译，又想定制目录页，应该怎么办呢 😶
 
-Vanilla JS + plain CSS + Node.js (0 Dependences)
+## 预览
+![view](https://user-images.githubusercontent.com/26399680/47614562-c35b4900-dadc-11e8-938d-b04092e9f495.png)
 
 ## 特性
 
@@ -19,5 +22,8 @@ Vanilla JS + plain CSS + Node.js (0 Dependences)
 ## 相关
 
 - UI偷师自 [barrowclift/directory-theme](https://github.com/barrowclift/directory-theme)
-
 - 自己的毕设 [nondanee/dropbox](https://github.com/nondanee/dropbox)
+
+## 许可
+
+The MIT License
